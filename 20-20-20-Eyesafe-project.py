@@ -16,7 +16,7 @@ def setInterval(interval, times = -1):
             # in a different thread to simulate setInterval
             def inner_wrap():
                 i = 0
-                while i != times and not stop.isSet():
+                while i != times and not stop.is_set():
                     stop.wait(interval)
                     function(*args, **kwargs)
                     i += 1
